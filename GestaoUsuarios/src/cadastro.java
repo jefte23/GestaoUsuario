@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -50,9 +49,7 @@ public class cadastro extends HttpServlet {
 		// preparar a resposta ao usuário
 		PrintWriter out = response.getWriter();
 		out.println("<html><head><title>Resposta</title></head>");
-		out.println("<body><h2>O usuario: " + u.getNome() + " foi Cadastrado coim sucesso</h2>");
+		out.println("<body><h2>O usuario: " + u.getNome() + " foi Cadastrado com sucesso</h2>");
 		out.println("</body></html>");
 	}
-
-
 }
