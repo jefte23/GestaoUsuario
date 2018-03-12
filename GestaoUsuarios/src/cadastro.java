@@ -32,7 +32,7 @@ public class cadastro extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String sobrenome = request.getParameter("sobrenome");
 		String cpf = request.getParameter("cpf");
-		String sexo = request.getParameter("sexo");
+		String sexo = request.getParameter("genero");
 		String data = request.getParameter("dataNascimento");
 		String email = request.getParameter("email");
 		
