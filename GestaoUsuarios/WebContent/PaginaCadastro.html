@@ -2,39 +2,201 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+	<style type="text/css">
+
+	/* Style the header */
+	.header {
+	    background-color: #f1f1f1;
+	    padding: 20px;
+	    text-align: center;
+	}
+	
+	body {
+	    font-size: 28px;
+	}
+	
+	ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    background-color: #333;
+	    position: -webkit-sticky; /* Safari */
+	    position: sticky;
+	    top: 0;
+	}
+	
+	li {
+	    float: left;
+	}
+	
+	li a {
+	    display: block;
+	    color: white;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+	
+	li a:hover {
+	    background-color: #111;
+	}
+	
+	.active {
+	    background-color: #4CAF50;
+	}
+
+	* {
+	    box-sizing: border-box;
+	}
+	
+	input[type=text], select, textarea {
+	    width: 80%;
+	    padding: 10px;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    resize: vertical;
+	}
+	
+	label {
+	    padding: 12px 12px 12px 0;
+	    display: inline;
+	}
+	
+	input[type=submit] {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 12px 20px;
+	    border: none;
+	    border-radius: 4px;
+	    cursor: pointer;
+	    float: right;
+	}
+	
+	input[type=submit]:hover {
+	    background-color: #45a049;
+	}
+	
+	.container {
+	    border-radius: 5px;
+	    background-color: #f2f2f2;
+	    padding: 25px;
+	}
+	
+	.col-25 {
+	    float: left;
+	    width: 15%;
+	    margin-top: 5px;
+	}
+	
+	.col-75 {
+	    float: left;
+	    width: 55%;
+	    margin-top: 5px;
+	}
+	
+	/* Clear floats after the columns */
+	.row:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+	
+	/* Responsive layout - when the screen is less than 450px wide, make the two columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 450px) {
+	    .col-25, .col-75, input[type=submit] {
+	        width: 100%;
+	        margin-top: 0;
+	    }
+	}
+
+
+
+</style>
 <title>Cadastro de Usuário</title>
 </head>
 <body>
-		<h2> Cadastro </h2>
-<form action="cadastro">
-			Primeiro nome:<br />
-			<input type="text" name="nome"/><br />
-			Sobrenome:<br />
-			<input type="text" name="sobrenome"/><br />
 
-			CPF:<br />
-			<input type="text" name="cpf"/><br />
+	<div class="header">
+		<img src="/imagens/banner.jpg" alt="banner.jpg" width="500" height="377">
+	</div>
+	
+	<div>
+		<ul>
+		  <li><a class="active" href="http://localhost:8080/GestaoUsuarios/">Home</a></li>
+		  <li><a href="http://localhost:8080/GestaoUsuarios/PaginaCadastro.html">Cadastro</a></li>
+		  <li><a href="#contact">Contato</a></li>
+		</ul>
+	</div>
 
-			Sexo:<br />
-			 <div class="genero">
+		<h2 align="center"> Cadastro </h2>
+
+<div class="container">
+	
+	 <form action="cadastro">
+    
+       	<div class="row">
+      		<div class="col-25">
+       		 	<label for="fname">Primeiro nome</label>
+        			</div>
+	      	<div class="col-75">
+    	    	<input type="text" id="fname" name="nome" placeholder="Seu nome..">
+      		</div>
+    	</div>
+    	<div class="row">
+      		<div class="col-25">
+       		 	<label for="lname">Sobrenome</label>
+        	</div>
+	      	<div class="col-75">
+    	    	<input type="text" id="lname" name="sobrenome" placeholder="seu sobrenome..">
+      		</div>
+    	</div>
+    	<div class="row">
+      		<div class="col-25">
+       		 	<label for="cpf">CPF</label>
+        	</div>
+	      	<div class="col-75">
+    	    	<input type="text" id="cpf" name="cpf" placeholder="00000000000">
+      		</div>
+    	</div>
+    	
+	   	<div class="row">
+      		<div class="col-25">
+       		 	<label for="genero">Genero</label>
+        	</div>
+        	<div class="col-75">
 			    <input type="radio" value="M" id="Masculino" name="genero" checked/>
 			    <label for="Masculino" class="radio">Masculino</label>
 			    <input type="radio" value="F" id="Feminino" name="genero" />
 			    <label for="Feminino" class="radio">Feminino</label>
 			    <input type="radio" value="O" id="Outro" name="genero" />
 			    <label for="Outro" class="radio">Outro</label>
-			   </div> 
-			 			
-			Data Nascimento: <br />
-			<input type = "date" name = "dataNascimento"><br /> 
-			 
-			Email:<br />
-			<input type="text" name="email"/><br />
-			<br />
-			<br />
-			<br />
+		    </div>
+		</div> 
+		
+		<div class="row">
+			<div class="col-25"> 			
+				<label for="nascimento">Nascimento</label>
+			</div>
+			<div class="col-74">
+				<input type = "date" id="nascimento" name = "dataNascimento">				
+			</div>	
+       	</div>
+       				 
+	   	<div class="row">
+      		<div class="col-25">
+       		 	<label for="email">Email</label>
+        	</div>
+	      	<div class="col-75">
+    	    	<input type="text" id="email" name="email" placeholder="seuemail@seuservidor.com">
+      		</div>
+    	</div>
 
-			<input type="submit" value="Cadastrar"/>
-</form>	
+		<div class="row">
+      			<input type="submit" value="cadastrar">
+    	</div>			 
+
+	</form>	
+</div>
 </body>
 </html>
